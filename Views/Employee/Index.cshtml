@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CrudMVC.Models.EmployeeTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpMName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpMName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmpID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EmpID }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.EmpID })
+        </td>
+    </tr>
+}
+
+</table>
